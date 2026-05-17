@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+mcp[fastmcp]
+google-adk
+python-dotenv
