@@ -16,6 +16,12 @@ Generate stylish developer profile cards from a GitHub username using a FastAPI 
 - Saves cards under `backend/static/cards/`
 - Includes fallback generation pipeline when agent orchestration fails
 
+## Live Demo
+
+The application is deployed on Google Cloud Run:
+- **Frontend App**: https://github-dev-card-frontend-mxyatg35fa-uc.a.run.app
+- **Backend API**: https://github-dev-card-backend-mxyatg35fa-uc.a.run.app
+
 ## Prerequisites
 
 - Python 3.12+

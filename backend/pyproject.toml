@@ -6,7 +6,7 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "mcp",
-    "google-adk",
+    "google-adk[extensions]",
     "python-dotenv",
     "httpx",
     "google-generativeai",

@@ -94,6 +94,9 @@
             const [error, setError] = useState(null);
             const [copied, setCopied] = useState(false);
 
+            // Use the environment variable if substituted, otherwise default to localhost:8080
+            const backendBase = '${BACKEND_URL}'.startsWith('$') ? 'http://localhost:8080' : '${BACKEND_URL}';
+
             const generateCard = async (e) => {
                 if (e) e.preventDefault();
                 if (!username.trim()) return;
@@ -101,9 +104,6 @@
                 setLoading(true);
                 setError(null);
                 setResult(null);
-
-                // Use the environment variable if substituted, otherwise default to localhost:8080
-                const backendBase = '${BACKEND_URL}'.startsWith('$') ? 'http://localhost:8080' : '${BACKEND_URL}';
 
                 try {
                     const response = await fetch(`${backendBase}/generate`, {
@@ -211,7 +211,7 @@
                                     )}
                                 </button>
                                 <a 
-                                    href={`http://localhost:8080${result.card_url}`} 
+                                    href={`${backendBase}${result.card_url}`} 
                                     target="_blank"
                                     class="flex items-center gap-2 px-4 py-2 bg-gh-card border border-gh-border hover:bg-gray-800 rounded-md text-sm font-medium transition-colors"
                                 >
